@@ -50,5 +50,6 @@ app.post("/api/student", (req, res) => {
 const port = process.env.PORT || 4545;
 
 app.use(rollbar.errorHandler());
+rollbar.critical("I cant take this ish anymore");
 rollbar.warning("this is a warning");
 app.listen(port, () => console.log(`running on port: ${port}`));
