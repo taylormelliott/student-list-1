@@ -8,7 +8,10 @@ let rollbar = new Rollbar({
 })
 
 const app = express()
+
 app.use(express.json())
+app.use('/style', express.static('./public/styles.css'))
+
 let students = []
 
 app.get('/', (req, res) => {
