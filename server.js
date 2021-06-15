@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
   rollbar.info("html file served successfully");
 });
 
-app.post("/api/studen", (req, res) => {
+app.post("/api/student", (req, res) => {
   let { name } = req.body;
   name = name.trim();
 
@@ -50,5 +50,5 @@ app.post("/api/studen", (req, res) => {
 const port = process.env.PORT || 4545;
 
 app.use(rollbar.errorHandler());
-
+rollbar.warning("this is a warning");
 app.listen(port, () => console.log(`running on port: ${port}`));
